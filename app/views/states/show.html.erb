@@ -23,3 +23,65 @@
     </div>
   </div>
 </div>
+
+<!-- A State has many item_states -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Item States
+      </li>
+
+      <% @state.item_states.each do |item_state| %>
+        <li class="list-group-item">
+          <a href="/item_states/<%= item_state.id %>">
+            <%= item_state.created_at %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/item_states/<%= item_state.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/item_states/<%= item_state.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_item_state/<%= item_state.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A State has many items -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Items
+      </li>
+
+      <% @state.items.each do |item| %>
+        <li class="list-group-item">
+          <a href="/items/<%= item.id %>">
+            <%= item.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/items/<%= item.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/items/<%= item.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_item/<%= item.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

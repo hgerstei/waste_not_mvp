@@ -26,3 +26,65 @@
     </div>
   </div>
 </div>
+
+<!-- A Item state has many recipe_item_states -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Recipe Item States
+      </li>
+
+      <% @item_state.recipe_item_states.each do |recipe_item_state| %>
+        <li class="list-group-item">
+          <a href="/recipe_item_states/<%= recipe_item_state.id %>">
+            <%= recipe_item_state.recipe_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/recipe_item_states/<%= recipe_item_state.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/recipe_item_states/<%= recipe_item_state.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_recipe_item_state/<%= recipe_item_state.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Item state has many recipes -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Recipes
+      </li>
+
+      <% @item_state.recipes.each do |recipe| %>
+        <li class="list-group-item">
+          <a href="/recipes/<%= recipe.id %>">
+            <%= recipe.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/recipes/<%= recipe.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/recipes/<%= recipe.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_recipe/<%= recipe.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

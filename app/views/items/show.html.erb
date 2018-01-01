@@ -23,3 +23,96 @@
     </div>
   </div>
 </div>
+
+<!-- A Item has many item_states -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Item States
+      </li>
+
+      <% @item.item_states.each do |item_state| %>
+        <li class="list-group-item">
+          <a href="/item_states/<%= item_state.id %>">
+            <%= item_state.created_at %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/item_states/<%= item_state.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/item_states/<%= item_state.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_item_state/<%= item_state.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Item has many states -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        States
+      </li>
+
+      <% @item.states.each do |state| %>
+        <li class="list-group-item">
+          <a href="/states/<%= state.id %>">
+            <%= state.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/states/<%= state.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/states/<%= state.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_state/<%= state.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Item has many recipe_item_states -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Recipe Item States
+      </li>
+
+      <% @item.recipe_item_states.each do |recipe_item_state| %>
+        <li class="list-group-item">
+          <a href="/recipe_item_states/<%= recipe_item_state.id %>">
+            <%= recipe_item_state.recipe_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/recipe_item_states/<%= recipe_item_state.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/recipe_item_states/<%= recipe_item_state.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_recipe_item_state/<%= recipe_item_state.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
