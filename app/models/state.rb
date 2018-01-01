@@ -1,6 +1,8 @@
 class State < ApplicationRecord
   # Direct associations
 
+  has_many   :item_states
+
   # Indirect associations
 
   # Validations
