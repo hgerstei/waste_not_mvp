@@ -1,5 +1,7 @@
 ActiveAdmin.register ItemState do
 
+ permit_params :item_id, :state_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
