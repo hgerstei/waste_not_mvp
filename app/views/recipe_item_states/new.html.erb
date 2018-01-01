@@ -33,7 +33,7 @@
           Item state
         </label>
 
-        <input type="text" id="item_state_id" name="item_state_id" placeholder="Item state" class="form-control" value="<%= @recipe_item_state.item_state_id %>">
+        <%= select_tag(:item_state_id, options_from_collection_for_select(ItemState.all, :id, :created_at, @recipe_item_state.item_state_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for description -->
