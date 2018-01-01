@@ -17,7 +17,7 @@
 
       <% @recipe_item_states.each do |recipe_item_state| %>
       <tr>
-        <td><%= recipe_item_state.recipe_id %></td>
+        <td><%= recipe_item_state.recipe.name %></td>
         <td><%= recipe_item_state.item_state_id %></td>
         <td><%= recipe_item_state.description %></td>
         <td>
