@@ -5,6 +5,10 @@ class Recipe < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :item_states,
+             :through => :recipe_item_states,
+             :source => :item_state
+
   # Validations
 
   validates :name, :presence => true

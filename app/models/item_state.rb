@@ -9,6 +9,10 @@ class ItemState < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :recipes,
+             :through => :recipe_item_states,
+             :source => :recipe
+
   # Validations
 
 end
