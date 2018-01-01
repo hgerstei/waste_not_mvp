@@ -16,7 +16,7 @@
 
       <% @item_states.each do |item_state| %>
       <tr>
-        <td><%= item_state.item_id %></td>
+        <td><%= item_state.item.name %></td>
         <td><%= item_state.state_id %></td>
         <td>
           <a href="/item_states/<%= item_state.id %>" class="btn btn-primary">Show</a>
