@@ -17,8 +17,20 @@
 
       <% @recipe_item_states.each do |recipe_item_state| %>
       <tr>
-        <td><%= recipe_item_state.recipe.name %></td>
-        <td><%= recipe_item_state.item_state.created_at %></td>
+        <td>
+          <% if recipe_item_state.recipe.present? %>
+            <a href="/recipes/<%= recipe_item_state.recipe.id %>">
+              <%= recipe_item_state.recipe.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if recipe_item_state.item_state.present? %>
+            <a href="/item_states/<%= recipe_item_state.item_state.id %>">
+              <%= recipe_item_state.item_state.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td><%= recipe_item_state.description %></td>
         <td>
           <a href="/recipe_item_states/<%= recipe_item_state.id %>" class="btn btn-primary">Show</a>

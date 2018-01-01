@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Recipe</dt>
-      <dd><%= @recipe_item_state.recipe_id %></dd>
+      <dd>
+        <% if @recipe_item_state.recipe.present? %>
+          <a href="/recipes/<%= @recipe_item_state.recipe_id %>">
+            <%= @recipe_item_state.recipe.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Item state</dt>
-      <dd><%= @recipe_item_state.item_state_id %></dd>
+      <dd>
+        <% if @recipe_item_state.item_state.present? %>
+          <a href="/item_states/<%= @recipe_item_state.item_state_id %>">
+            <%= @recipe_item_state.item_state.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Description</dt>
       <dd><%= @recipe_item_state.description %></dd>

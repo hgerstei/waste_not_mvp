@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Item</dt>
-      <dd><%= @item_state.item_id %></dd>
+      <dd>
+        <% if @item_state.item.present? %>
+          <a href="/items/<%= @item_state.item_id %>">
+            <%= @item_state.item.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>State</dt>
-      <dd><%= @item_state.state_id %></dd>
+      <dd>
+        <% if @item_state.state.present? %>
+          <a href="/states/<%= @item_state.state_id %>">
+            <%= @item_state.state.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

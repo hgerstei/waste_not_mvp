@@ -16,8 +16,20 @@
 
       <% @item_states.each do |item_state| %>
       <tr>
-        <td><%= item_state.item.name %></td>
-        <td><%= item_state.state.name %></td>
+        <td>
+          <% if item_state.item.present? %>
+            <a href="/items/<%= item_state.item.id %>">
+              <%= item_state.item.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if item_state.state.present? %>
+            <a href="/states/<%= item_state.state.id %>">
+              <%= item_state.state.name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/item_states/<%= item_state.id %>" class="btn btn-primary">Show</a>
           <a href="/item_states/<%= item_state.id %>/edit" class="btn btn-warning">Edit</a>
