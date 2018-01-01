@@ -51,6 +51,29 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_item_state" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for item_id -->
+      <div class="form-group">
+        <label for="item_id" class="control-label">
+          Item
+        </label>
+
+        <%= select_tag(:item_id, options_from_collection_for_select(Item.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for state_id -->
+      <input type="hidden" name="state_id" value="<%= @state.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Item State
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

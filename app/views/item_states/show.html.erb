@@ -54,6 +54,44 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_recipe_item_state" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for recipe_id -->
+      <div class="form-group">
+        <label for="recipe_id" class="control-label">
+          Recipe
+        </label>
+
+        <%= select_tag(:recipe_id, options_from_collection_for_select(Recipe.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for item_state_id -->
+      <div class="form-group">
+        <label for="item_state_id" class="control-label">
+          Item state
+        </label>
+
+        <%= select_tag(:item_state_id, options_from_collection_for_select(ItemState.all, :id, :created_at), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"></textarea>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Recipe Item State
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

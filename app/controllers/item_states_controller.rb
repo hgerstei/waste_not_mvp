@@ -6,6 +6,7 @@ class ItemStatesController < ApplicationController
   end
 
   def show
+    @recipe_item_state = RecipeItemState.new
     @item_state = ItemState.find(params[:id])
 
     render("item_states/show.html.erb")
