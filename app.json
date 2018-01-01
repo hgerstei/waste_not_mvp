@@ -1,0 +1,1 @@
+{"name":"Waste Not MVP","repository":"https://github.com/hgerstei/waste_not_mvp","env":{"CLOUDINARY_CLOUD_NAME":{"required":true},"CLOUDINARY_API_KEY":{"required":true},"CLOUDINARY_API_SECRET":{"required":true},"ROLLBAR_ACCESS_TOKEN":{"required":true}}}
