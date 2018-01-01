@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "items#index"
   # Routes for the Recipe_item_state resource:
   # CREATE
   get "/recipe_item_states/new", :controller => "recipe_item_states", :action => "new"
