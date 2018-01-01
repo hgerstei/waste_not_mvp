@@ -1,6 +1,8 @@
 class RecipeItemState < ApplicationRecord
   # Direct associations
 
+  belongs_to :recipe
+
   # Indirect associations
 
   # Validations
