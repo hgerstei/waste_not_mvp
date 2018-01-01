@@ -1,6 +1,6 @@
 class RecipeItemStatesController < ApplicationController
   def index
-    @recipe_item_states = RecipeItemState.all
+    @recipe_item_states = RecipeItemState.page(params[:page]).per(10)
 
     render("recipe_item_states/index.html.erb")
   end

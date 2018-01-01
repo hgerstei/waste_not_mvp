@@ -1,6 +1,6 @@
 class ItemStatesController < ApplicationController
   def index
-    @item_states = ItemState.all
+    @item_states = ItemState.page(params[:page]).per(10)
 
     render("item_states/index.html.erb")
   end
