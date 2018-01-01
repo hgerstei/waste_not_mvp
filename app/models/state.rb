@@ -5,6 +5,10 @@ class State < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :items,
+             :through => :item_states,
+             :source => :item
+
   # Validations
 
   validates :name, :uniqueness => true
