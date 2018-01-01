@@ -1,6 +1,7 @@
 class ItemStatesController < ApplicationController
   def index
-    @item_states = ItemState.page(params[:page]).per(10)
+    @q = ItemState.ransack(params[:q])
+    @item_states = @q.result(:distinct => true).includes(:item, :state, :recipe_item_states, :recipes).page(params[:page]).per(10)
 
     render("item_states/index.html.erb")
   end
