@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Item_state resource:
+  # CREATE
+  get "/item_states/new", :controller => "item_states", :action => "new"
+  post "/create_item_state", :controller => "item_states", :action => "create"
+
+  # READ
+  get "/item_states", :controller => "item_states", :action => "index"
+  get "/item_states/:id", :controller => "item_states", :action => "show"
+
+  # UPDATE
+  get "/item_states/:id/edit", :controller => "item_states", :action => "edit"
+  post "/update_item_state/:id", :controller => "item_states", :action => "update"
+
+  # DELETE
+  get "/delete_item_state/:id", :controller => "item_states", :action => "destroy"
+  #------------------------------
+
   # Routes for the State resource:
   # CREATE
   get "/states/new", :controller => "states", :action => "new"

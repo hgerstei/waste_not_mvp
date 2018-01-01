@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @item_state.errors.any? %>
+  <% @item_state.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Item State</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_item_state" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for item_id -->
+      <div class="form-group">
+        <label for="item_id" class="control-label">
+          Item
+        </label>
+
+        <input type="text" id="item_id" name="item_id" placeholder="Item" class="form-control" value="<%= @item_state.item_id %>">
+      </div>
+
+      <!-- Label and input for state_id -->
+      <div class="form-group">
+        <label for="state_id" class="control-label">
+          State
+        </label>
+
+        <input type="text" id="state_id" name="state_id" placeholder="State" class="form-control" value="<%= @item_state.state_id %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Item State
+      </button>
+      or
+      <a href="/item_states">Cancel</a>
+    </form>
+  </div>
+</div>
