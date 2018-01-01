@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   root :to => "items#index"
   # Routes for the Recipe_item_state resource:
   # CREATE
