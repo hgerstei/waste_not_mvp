@@ -18,7 +18,7 @@
       <% @recipe_item_states.each do |recipe_item_state| %>
       <tr>
         <td><%= recipe_item_state.recipe.name %></td>
-        <td><%= recipe_item_state.item_state_id %></td>
+        <td><%= recipe_item_state.item_state.created_at %></td>
         <td><%= recipe_item_state.description %></td>
         <td>
           <a href="/recipe_item_states/<%= recipe_item_state.id %>" class="btn btn-primary">Show</a>
