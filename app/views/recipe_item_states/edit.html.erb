@@ -1,0 +1,55 @@
+<!-- Validation failure messages -->
+<% if @recipe_item_state.errors.any? %>
+  <% @recipe_item_state.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Recipe Item State #<%= @recipe_item_state.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_recipe_item_state/<%= @recipe_item_state.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for recipe_id -->
+      <div class="form-group">
+        <label for="recipe_id" class="control-label">
+          Recipe
+        </label>
+
+        <input type="text" id="recipe_id" name="recipe_id" placeholder="Recipe" class="form-control" value="<%= @recipe_item_state.recipe_id %>">
+      </div>
+
+      <!-- Label and input for item_state_id -->
+      <div class="form-group">
+        <label for="item_state_id" class="control-label">
+          Item state
+        </label>
+
+        <input type="text" id="item_state_id" name="item_state_id" placeholder="Item state" class="form-control" value="<%= @recipe_item_state.item_state_id %>">
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <textarea id="description" name="description" placeholder="Description" class="form-control" rows="3"><%= @recipe_item_state.description %></textarea>
+      </div>
+
+      <button class="btn btn-warning">
+        Update Recipe Item State
+      </button>
+      or
+      <a href="/recipe_item_states/<%= @recipe_item_state.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

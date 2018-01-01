@@ -1,0 +1,31 @@
+<div class="page-header">
+  <h3>Recipe Item State #<%= @recipe_item_state.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Recipe</dt>
+      <dd><%= @recipe_item_state.recipe_id %></dd>
+
+      <dt>Item state</dt>
+      <dd><%= @recipe_item_state.item_state_id %></dd>
+
+      <dt>Description</dt>
+      <dd><%= @recipe_item_state.description %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/recipe_item_states" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/recipe_item_states/<%= @recipe_item_state.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_recipe_item_state/<%= @recipe_item_state.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Recipe_item_state resource:
+  # CREATE
+  get "/recipe_item_states/new", :controller => "recipe_item_states", :action => "new"
+  post "/create_recipe_item_state", :controller => "recipe_item_states", :action => "create"
+
+  # READ
+  get "/recipe_item_states", :controller => "recipe_item_states", :action => "index"
+  get "/recipe_item_states/:id", :controller => "recipe_item_states", :action => "show"
+
+  # UPDATE
+  get "/recipe_item_states/:id/edit", :controller => "recipe_item_states", :action => "edit"
+  post "/update_recipe_item_state/:id", :controller => "recipe_item_states", :action => "update"
+
+  # DELETE
+  get "/delete_recipe_item_state/:id", :controller => "recipe_item_states", :action => "destroy"
+  #------------------------------
+
   # Routes for the Item_state resource:
   # CREATE
   get "/item_states/new", :controller => "item_states", :action => "new"
