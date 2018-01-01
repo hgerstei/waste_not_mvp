@@ -7,6 +7,10 @@ class RecipeItemState < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :item,
+             :through => :item_state,
+             :source => :item
+
   # Validations
 
   validates :item_state_id, :presence => true
